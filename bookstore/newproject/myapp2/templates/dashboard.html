@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block data %}
+
+<h1 class="text-center ">Admin Dashboard for BookStore</h1>
+<div class="container-md">
+<table class="table table-hover table-bordered table-dark table-striped">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Book Name</th>
+        <th>Author Name</th>
+        <th>Book Description</th>
+        <th>Book Price</th>
+        <th>Edit</th>
+        <th>Delete</th>
+    </tr>
+    </thead>
+    {% for d in data %}
+    <tr>
+        <td>{{d.id}}</td>
+        <td>{{d.bname}}</td>
+        <td>{{d.aname}}</td>
+        <td>{{d.bdesc}}</td>
+        <td>{{d.bprice}}</td>
+        <td><a type="button" class="btn btn-success" href="/edit/{{d.id}}"><i class="fa-solid fa-pen-to-square"></i></a></td>
+        <td><a type="button" class="btn btn-danger" href="/delete/{{d.id}}"><i class="fa-solid fa-trash"></i></a></td>
+    </tr>
+
+    {% endfor %}
+</table>
+</div>
+<p class="add-button"><a type="button" class="btn btn-primary" href="/bookstore">Add Book</a></p>
+<p class="add-button"><a type="button" class="btn btn-primary" href="/books">View Books</a></p>
+
+<p class="add-button"><a type="button" class="btn btn-primary" href="/">Back to HomePage</a></p>
+{% endblock data %}

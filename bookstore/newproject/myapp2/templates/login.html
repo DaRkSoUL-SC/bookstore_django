@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block data %}
+    <h1 class="text-center">LOGIN TO ACCESS DASHBOARD</h1>
+    <div class="container  bg-light p-3">
+    <form action="" method="POST">
+    {% csrf_token %}
+        {{form.as_p}}
+    <tr>
+        <td><input class="btn btn-primary" type="submit" name="OK"></td>
+    </tr>
+</form>
+</div>
+<p class="add-button m-4"><a type="button" class="btn btn-primary" href="/admin">Admin Login</a></p>
+<p class="add-button m-4"><a type="button" class="btn btn-primary" href="/register">Register</a></p>
+
+{% endblock data %}

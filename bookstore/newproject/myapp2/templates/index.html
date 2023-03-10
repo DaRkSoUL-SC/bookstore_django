@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block data %}
+
+<form method="POST" action="/store">
+    {% csrf_token %}
+    <table>
+        <tr>
+            <td>Book Name: </td>
+            <td><input type="text" name="bname" /></td>
+        </tr>
+        <tr>
+            <td>Author Name: </td>
+            <td><input type="text" name="aname" /></td>
+        </tr>
+        <tr>
+            <td>Book Description: </td>
+            <td><textarea name="bdesc" cols="30" rows="5"></textarea></td>
+        </tr>
+        <tr>
+            <td>Book Price: </td>
+            <td><textarea name="bprice" cols="30" rows="5"></textarea></td>
+        </tr>
+        <tr>
+           <td><input type="submit" name="send" value="POST"></td>
+        </tr>
+    </table>
+</form>
+
+{% endblock data %}

@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block data %}
+<h1 class="text-center">CONTACT US</h1>
+
+<div class="container bg-light">
+{{form.as_p}}
+
+<div>
+    <input class="btn btn-primary mb-3" type="submit" name="send" value="SEND">
+</div>
+</div>
+
+<p class="add-button m-4"><a type="button" class="btn btn-primary" href="/">Back to HomePage</a></p>
+{% endblock data %}

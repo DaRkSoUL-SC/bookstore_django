@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block data %}
+    <h1 class="text-center">ADD BOOK DETAILS</h1>
+    <div class="container bg-light p-3">
+<form  method="POST" action="/edit/{{x.id}}">
+    {% csrf_token %}
+    <div class="mb-3">
+        <label class="form-label">Book Name: </label>
+        <input type="text" name="bname" class="form-control" value="{{x.bname}}" />
+    </div>
+    <div class="mb-3">
+        <label>Author Name: </label>
+        <input type="text" name="aname" class="form-control" value="{{x.aname}}" />
+    </div>
+        
+    <div class="mb-3">
+        <label for="">Book Description: </label>
+        <textarea class="form-control" name="bdesc" value="{{x.bdesc}}"></textarea>
+      </div>
+    <div class="mb-3">
+        <label for="">Book Price: </label>
+        <input type="number" class="form-control" name="bprice" placeholder="Amount in ₹" value="{{x.bprice}}"/>
+    </div>
+
+    <div>
+        <input class="btn btn-primary" type="submit" name="send" value="UPDATE BOOK DETAILS">
+    </div>
+    
+</form>
+</div>
+
+
+
+{% endblock data %}

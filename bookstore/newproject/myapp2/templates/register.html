@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block data %}
+
+<div class="container bg-light mt-5">
+<form method="POST" action="/register">
+    {% csrf_token %}
+    <table>
+        {{form.as_p}}
+        <tr>
+            <td>
+                <input class="btn btn-primary mb-3" type="submit" name="send" value="REGISTER">
+            </td>
+        </tr>
+    </table>
+</form>
+</div>
+{% endblock data %}
